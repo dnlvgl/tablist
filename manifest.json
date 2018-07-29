@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "tablist",
+    "version": "0.1",
+
+    "description": "Display URLs of all open tabs in list",
+
+    "icons": {
+	"48": "icons/tablist-48.png"
+    },
+
+    "permissions":
+    [
+	"tabs"
+    ],
+
+    "browser_action": {
+	"default_icon": "icons/tablist-48.png",
+	"default_title": "tablist",
+	"default_popup": "popup/tablist.html"
+    }
+}
