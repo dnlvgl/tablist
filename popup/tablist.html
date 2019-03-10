@@ -6,7 +6,18 @@
     <link href="../popup/tablist.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <ul id="tablist-container">
-    </ul>
+    <div class="panel tablist">
+      <div class="tablist-checkbox-wrapper">
+        <input type="checkbox" id="selectAll" value="">
+        <label for="selectAll">Select all</label>
+      </div>
+      
+      <ul class="tablist-items">
+      </ul>
+      <div class="tablist-buttons">
+        <button class="tablist-delete-btn browser-style">Close selected</button>
+        <button class="tablist-export-btn browser-style">Export selected</button>
+      </div>
+    </div>
   </body>
 </html>

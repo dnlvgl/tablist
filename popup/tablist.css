@@ -1,5 +1,6 @@
 body {
     font-family: monospace;
+    max-width: 350px;
 }
 
 ul {
@@ -7,5 +8,24 @@ ul {
     padding: 0;
     text-indent: 0;
     list-style-type: none;
+    max-height: 500px;
+    overflow-y: scroll;
 }
 
+li {
+    margin-right: 5px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.tablist-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.tablist-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

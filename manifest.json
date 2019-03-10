@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "name": "tablist",
-    "version": "0.1",
+    "version": "0",
 
-    "description": "Display URLs of all open tabs in list",
+    "description": "Delete and export your tabs",
 
     "icons": {
 	"48": "icons/tablist-48.png"
