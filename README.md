@@ -8,6 +8,7 @@ At the moment all tabs of all windows are shown.
 
 - Delete selected tabs
 - Export selected tab URLs in new tab as list
+- Components styled after [Firefox Style Guide](https://firefoxux.github.io/StyleGuide/#/welcome)
 
 ### Todo
 

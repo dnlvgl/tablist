@@ -14,20 +14,27 @@ const logTabs = (tabs) => {
 // create list item and append it to popup
 const createTabList = (tab, popupList) => {
     const markup = `
-        <div class="icon"></div>
-        <div class="text">
-            <div class="checkboxItem">
-                <input type="checkbox" id="${tab.id}" value="${tab.url}" name="tab"/>
-                <label for="${tab.id}">${tab.title}</label>
-            </div>
+        <div class="panel-list-item tablist-checkbox-wrapper">
+          <div class="icon"></div>
+          <div class="text">
+              <div class="checkboxItem">
+                  <input type="checkbox" id="${tab.id}" value="${tab.url}" name="tab"/>
+                  <label for="${tab.id}">${tab.title}</label>
+              </div>
+          </div>
+          <div class="text-shortcut"></div>
         </div>
-        <div class="text-shortcut"></div>
     `;
-    const listItem = document.createElement('div');
-    listItem.setAttribute('class', 'panel-list-item tablist-checkbox-wrapper');
-    listItem.innerHTML = markup;
-    
-    popupList.appendChild(listItem);
+
+    // listItem.innerHTML = markup; creates linting error
+    // use DomParser to append nodes
+    const parser = new DOMParser();
+    const parsed = parser.parseFromString(markup, 'text/html');
+    // get outer div
+    const listItems = parsed.getElementsByTagName('div');
+    for (const item of listItems) {
+        popupList.appendChild(item);
+    };    
 };
 
 // create all needed event listeners
