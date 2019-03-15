@@ -1,17 +1,35 @@
-# Tablist
+# Tablist Add-on for Firefox
 
 Show all open tabs in a popup. Select or export multiple tabs.
 
 At the moment all tabs of all windows are shown.
 
-## TODO
+## Features
 
-- [x] Add basic CSS for popup
-- [ ] Replace placeholder Icons (multiple sizes)
-- [ ] Add 'export urls' button
+- Delete selected tabs
+- Export selected tab URLs in new tab as list
+
+### Todo
+
+- [ ] Replace placeholder icons (multiple sizes)
 - [ ] Add tab favicon
-- [x] Add checkbox before tab name to select and close multiple tabs
 - [ ] Add search?
+
+## Pemissions
+
+- tabs: Read and close tabs
+- storage: Cache list for new tab
+- activeTab: Open new active tab
+
+## Development
+
+Install the [web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext) command line tool
+```sh
+$ npm install --global web-ext
+$ web-ext run
+```
+
+Enable debugging in Firefox under `about:debugging`
 
 ## Misc
 

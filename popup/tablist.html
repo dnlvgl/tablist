@@ -7,16 +7,25 @@
   </head>
   <body>
     <div class="panel tablist">
-      <div class="tablist-checkbox-wrapper">
-        <input type="checkbox" id="selectAll" value="">
-        <label for="selectAll">Select all</label>
+      <div class="panel-section panel-section-list tablist-items">
+        <!-- first item: select all -->
+        <div class="panel-list-item">
+          <div class="icon"></div>
+          <div class="text">
+            <div class="checkboxItem">
+              <input type="checkbox" id="selectAll" value="">
+              <label for="selectAll">Select all</label>
+            </div>
+          </div>
+          <div class="text-shortcut"></div>
+          <!--append additional tabs -->
+        </div>
+        <div class="panel-section-separator"></div>
       </div>
-      
-      <ul class="tablist-items">
-      </ul>
-      <div class="tablist-buttons">
-        <button class="tablist-delete-btn browser-style">Close selected</button>
-        <button class="tablist-export-btn browser-style">Export selected</button>
+      <div class="panel-section panel-section-footer tablist-buttons">
+        <div class="panel-section-footer-button tablist-delete-btn">Close selected</div>
+        <div class="panel-section-footer-separator"></div>
+        <div class="panel-section-footer-button default tablist-export-btn">Export selected</div>
       </div>
     </div>
   </body>

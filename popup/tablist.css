@@ -1,31 +1,34 @@
 body {
-    font-family: monospace;
     max-width: 350px;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    text-indent: 0;
-    list-style-type: none;
     max-height: 500px;
     overflow-y: scroll;
 }
 
-li {
-    margin-right: 5px;
+.panel-list-item {
     text-overflow: ellipsis;
     overflow-x: hidden;
     white-space: nowrap;
 }
 
-.tablist-checkbox-wrapper {
+.checkboxItem {
     display: flex;
     align-items: center;
 }
 
-.tablist-buttons {
+.panel-section-footer {
+    overflow-x: hidden;
+}
+
+/* .tablist-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+} */
+
+/* .tablist-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-}
+} */
