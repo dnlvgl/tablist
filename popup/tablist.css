@@ -2,11 +2,6 @@ body {
     max-width: 350px;
 }
 
-ul {
-    max-height: 500px;
-    overflow-y: scroll;
-}
-
 .panel-list-item {
     text-overflow: ellipsis;
     overflow-x: hidden;
@@ -21,14 +16,3 @@ ul {
 .panel-section-footer {
     overflow-x: hidden;
 }
-
-/* .tablist-checkbox-wrapper {
-    display: flex;
-    align-items: center;
-} */
-
-/* .tablist-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-} */
