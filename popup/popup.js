@@ -96,7 +96,7 @@ const tabListEvents = () => {
 // open new tab with extension page as target
 const createNewTab = () => {
     browser.tabs.create({
-        url:'../taburllist.html'
+        url:'../tablist/tablist.html'
     })
         .then(closePopup, onError);
 };
