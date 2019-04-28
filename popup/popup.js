@@ -13,13 +13,17 @@ const logTabs = (tabs) => {
 
 // create list item and append it to popup
 const createTabList = (tab, popupList) => {
+    const fallbackFavIcon = '../icons/globe.svg';
     const markup = `
         <div class="panel-list-item tablist-checkbox-wrapper">
-          <div class="icon"></div>
+          <div class="icon">
+          </div>
           <div class="text">
               <div class="checkboxItem">
-                  <input type="checkbox" id="${tab.id}" value="${tab.url}" name="tab"/>
-                  <label for="${tab.id}">${tab.title}</label>
+                  <input type="checkbox" id="${tab.id}" value="${tab.url}" title="${tab.title}" name="tab"/>
+                  <label for="${tab.id}" title="${tab.title}">
+                     <img class="favicon" src="${tab.favIconUrl ? tab.favIconUrl : fallbackFavIcon}">
+                  ${tab.title}</label>
               </div>
           </div>
           <div class="text-shortcut"></div>
@@ -41,6 +45,7 @@ const createTabList = (tab, popupList) => {
 const tabListEvents = () => {
     // add event listener on wrapper and check for class?
     const toggleSelect = document.getElementById('selectAll'),
+          listItem = document.querySelectorAll('.tablist-checkbox-wrapper'),
           deleteBtn = document.querySelector('.tablist-delete-btn'),
           exportBtn = document.querySelector('.tablist-export-btn'),
           listBtn = document.querySelector('.tablist-list-btn');
@@ -57,6 +62,17 @@ const tabListEvents = () => {
             }
         });
     });
+
+    // Array.from(listItem).map(item => {
+    //     item.addEventListener('click', (event) => {
+    //         console.log(event.target);
+    //         if (event.target.type !== 'checkbox' ) {
+    //             console.log('click');
+    //             const checkbox = item.querySelector('input');
+    //             checkbox.checked = checkbox.checked ? false : true;
+    //         }
+    //     });
+    // });
 
     // collect and delete all checked items
     deleteBtn.addEventListener('click', () => {

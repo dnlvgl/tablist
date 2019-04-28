@@ -8,9 +8,16 @@ body {
     white-space: nowrap;
 }
 
-.checkboxItem {
+.checkboxItem,
+.checkboxItem label {
     display: flex;
     align-items: center;
+}
+
+.favicon {
+    width: 16px;
+    height: 16px;
+    margin-inline-end: 3px;
 }
 
 .panel-section-footer {

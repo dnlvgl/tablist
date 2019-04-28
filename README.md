@@ -13,8 +13,6 @@ At the moment all tabs of all windows are shown.
 ### Todo
 
 - [ ] Replace placeholder icons (multiple sizes)
-- [ ] Add tab favicon
-- [ ] Add search?
 
 ## Pemissions
 
@@ -35,3 +33,4 @@ Enable debugging in Firefox under `about:debugging`
 ## Misc
 
 Temporary icon placeholder from: https://icons8.com/
+Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
