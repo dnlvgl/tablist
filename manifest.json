@@ -1,12 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "tablist",
+    "name": "Tablist",
     "version": "0",
 
     "description": "Delete and export your tabs",
 
     "icons": {
-	"48": "icons/tablist-48.png"
+        "48": "icons/tablist.svg",
+        "96": "icons/tablist.svg"
     },
 
     "permissions":
@@ -20,6 +21,15 @@
 	"default_icon": "icons/tablist-48.png",
 	"default_title": "tablist",
         "default_popup": "popup/popup.html",
-        "browser_style": true
+        "browser_style": true,
+          "theme_icons": [{
+              "light": "icons/tablist-16-light.png",
+              "dark": "icons/tablist-16.png",
+              "size": 16
+          }, {
+              "light": "icons/tablist-32-light.png",
+              "dark": "icons/tablist-32.png",
+              "size": 32
+          }]
     }
 }

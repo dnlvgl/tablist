@@ -34,3 +34,6 @@ Enable debugging in Firefox under `about:debugging`
 
 Temporary icon placeholder from: https://icons8.com/
 Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
+
+## Info
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action#Syntax
