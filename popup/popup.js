@@ -1,4 +1,4 @@
-// get array of tabs call event listeners (aka main function)
+// get array of tabs, call event listeners (aka main function)
 const logTabs = (tabs) => {
     const popupList = document.querySelector('.tablist-items');
 
@@ -30,7 +30,6 @@ const createTabList = (tab, popupList) => {
         </div>
     `;
 
-    // listItem.innerHTML = markup; creates linting error
     // use DomParser to append nodes
     const parser = new DOMParser();
     const parsed = parser.parseFromString(markup, 'text/html');
@@ -45,10 +44,8 @@ const createTabList = (tab, popupList) => {
 const tabListEvents = () => {
     // add event listener on wrapper and check for class?
     const toggleSelect = document.getElementById('selectAll'),
-          listItem = document.querySelectorAll('.tablist-checkbox-wrapper'),
           deleteBtn = document.querySelector('.tablist-delete-btn'),
-          exportBtn = document.querySelector('.tablist-export-btn'),
-          listBtn = document.querySelector('.tablist-list-btn');
+          exportBtn = document.querySelector('.tablist-export-btn')
 
     // check or uncheck all items in tablist
     toggleSelect.addEventListener('click', (event) => {
@@ -63,21 +60,8 @@ const tabListEvents = () => {
         });
     });
 
-    // Array.from(listItem).map(item => {
-    //     item.addEventListener('click', (event) => {
-    //         console.log(event.target);
-    //         if (event.target.type !== 'checkbox' ) {
-    //             console.log('click');
-    //             const checkbox = item.querySelector('input');
-    //             checkbox.checked = checkbox.checked ? false : true;
-    //         }
-    //     });
-    // });
-
     // collect and delete all checked items
     deleteBtn.addEventListener('click', () => {
-        console.log('click delete');
-        
         const checkboxes = Array.from(document.getElementsByName('tab'));
         let selectedTabIds = [];
         checkboxes.map(checkbox => {
@@ -90,8 +74,8 @@ const tabListEvents = () => {
             .then(closePopup, onError);
     });
 
+    // export all checked items as links in new tab
     exportBtn.addEventListener('click', () => {
-        console.log('click export');
         const checkboxes = Array.from(document.getElementsByName('tab'));
         let selectedTabUrls = {
             urls: []
@@ -118,7 +102,6 @@ const createNewTab = () => {
 };
 
 const closePopup = () => {
-    console.log('done, closing');
     window.close();  
 };
 

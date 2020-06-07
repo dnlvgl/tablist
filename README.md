@@ -7,22 +7,19 @@ At the moment all tabs of all windows are shown.
 ## Features
 
 - Delete selected tabs
-- Export selected tab URLs in new tab as list
+- Export selected tab URLs in new tab as plain list
 - Components styled after [Firefox Style Guide](https://firefoxux.github.io/StyleGuide/#/welcome)
 
-### Todo
-
-- [ ] Replace placeholder icons (multiple sizes)
-
-## Pemissions
+## Permissions
 
 - tabs: Read and close tabs
-- storage: Cache list for new tab
-- activeTab: Open new active tab
+- storage: Cache list for exported tabs
+- activeTab: Open new active tab to display all exported links
 
 ## Development
 
 Install the [web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext) command line tool
+
 ```sh
 $ npm install --global web-ext
 $ web-ext run
@@ -32,8 +29,4 @@ Enable debugging in Firefox under `about:debugging`
 
 ## Misc
 
-Temporary icon placeholder from: https://icons8.com/
 Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
-
-## Info
-https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action#Syntax
