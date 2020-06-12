@@ -4,7 +4,7 @@ const logTabs = (tabs) => {
 
     // get all tab URLs and render list
     for (let tab of tabs) {
-        createTabList(tab, popupList);  
+        createTabList(tab, popupList);
     }
 
     // creat eventListeners
@@ -37,22 +37,22 @@ const createTabList = (tab, popupList) => {
     const listItems = parsed.getElementsByTagName('div');
     for (const item of listItems) {
         popupList.appendChild(item);
-    };    
+    };
 };
 
 // create all needed event listeners
 const tabListEvents = () => {
     // add event listener on wrapper and check for class?
     const toggleSelect = document.getElementById('selectAll'),
-          deleteBtn = document.querySelector('.tablist-delete-btn'),
-          exportBtn = document.querySelector('.tablist-export-btn')
+        deleteBtn = document.querySelector('.tablist-delete-btn'),
+        exportBtn = document.querySelector('.tablist-export-btn')
 
     // check or uncheck all items in tablist
     toggleSelect.addEventListener('click', (event) => {
         const checkAllItems = event.target.checked;
         const checkboxes = Array.from(document.getElementsByName('tab'));
         checkboxes.map(checkbox => {
-            if(checkAllItems) {
+            if (checkAllItems) {
                 checkbox.checked = true;
             } else {
                 checkbox.checked = false;
@@ -65,7 +65,7 @@ const tabListEvents = () => {
         const checkboxes = Array.from(document.getElementsByName('tab'));
         let selectedTabIds = [];
         checkboxes.map(checkbox => {
-            if(checkbox.checked) {
+            if (checkbox.checked) {
                 console.log(checkbox);
                 selectedTabIds.push(parseInt(checkbox.id));
             }
@@ -80,15 +80,15 @@ const tabListEvents = () => {
         let selectedTabUrls = {
             urls: []
         };
-        
+
         checkboxes.map(checkbox => {
-            if(checkbox.checked) {
+            if (checkbox.checked) {
                 selectedTabUrls.urls.push(checkbox.value);
             }
         });
 
         // save urls in storage to retrieve in new tab
-        browser.storage.local.set({selectedTabUrls})
+        browser.storage.local.set({ selectedTabUrls })
             .then(createNewTab, onError);
     });
 };
@@ -96,17 +96,17 @@ const tabListEvents = () => {
 // open new tab with extension page as target
 const createNewTab = () => {
     browser.tabs.create({
-        url:'../tablist/tablist.html'
+        url: '../tablist/tablist.html'
     })
         .then(closePopup, onError);
 };
 
 const closePopup = () => {
-    window.close();  
+    window.close();
 };
 
 const onError = (error) => {
-  console.log(`Error: ${error}`);
+    console.log(`Error: ${error}`);
 };
 
 browser.tabs.query({})

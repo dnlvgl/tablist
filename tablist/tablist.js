@@ -1,11 +1,11 @@
 // get all slinks from storage an display in list
 const showList = (storage) => {
-    const listElement = document.querySelector('.urlist');
-    storage.selectedTabUrls.urls.map(item => {
-      const listItem = document.createElement('li');
-      listItem.appendChild(document.createTextNode(item));
-      listElement.appendChild(listItem);
-    });   
+  const listElement = document.querySelector('.urlist');
+  storage.selectedTabUrls.urls.map(item => {
+    const listItem = document.createElement('li');
+    listItem.appendChild(document.createTextNode(item));
+    listElement.appendChild(listItem);
+  });
 };
 
 const onError = (error) => {
