@@ -1,11 +1,38 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #15141a;
+    --border-color: #cfcfd8;
+    --hover-bg: rgba(12, 12, 13, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #2b2a33;
+        --text-color: #fbfbfe;
+        --border-color: #52525e;
+        --hover-bg: rgba(255, 255, 255, 0.1);
+    }
+}
+
 body {
     max-width: 350px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.panel-section-separator {
+    border-color: var(--border-color);
 }
 
 .panel-list-item {
     text-overflow: ellipsis;
     overflow-x: hidden;
     white-space: nowrap;
+    color: var(--text-color);
+}
+
+.panel-list-item:hover {
+    background-color: var(--hover-bg);
 }
 
 .checkboxItem,
@@ -22,4 +49,8 @@ body {
 
 .panel-section-footer {
     overflow-x: hidden;
+}
+
+.panel-section-footer-button {
+    color: var(--text-color);
 }

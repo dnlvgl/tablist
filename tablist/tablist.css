@@ -1,4 +1,40 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #15141a;
+    --link-color: #0060df;
+    --link-hover-color: #003eaa;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1c1b22;
+        --text-color: #fbfbfe;
+        --link-color: #00ddff;
+        --link-hover-color: #80ebff;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: 16px;
+    margin: 0;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
 .urlist {
     list-style-type: none;
     padding-left: 0;
+}
+
+.urlist li {
+    margin-bottom: 8px;
 }
