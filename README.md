@@ -7,7 +7,7 @@ At the moment all tabs of all windows are shown.
 ## Features
 
 - Delete selected tabs
-- Export selected tab URLs in new tab as plain list
+- Export selected tab URLs in new tab as markdown links
 - Components styled after [Firefox Style Guide](https://firefoxux.github.io/StyleGuide/#/welcome)
 
 ## Permissions

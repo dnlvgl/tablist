@@ -7,7 +7,7 @@ const logTabs = (tabs) => {
         createTabList(tab, popupList);
     }
 
-    // creat eventListeners
+    // create eventListeners
     tabListEvents();
 };
 
@@ -20,7 +20,7 @@ const createTabList = (tab, popupList) => {
           </div>
           <div class="text">
               <div class="checkboxItem">
-                  <input type="checkbox" id="${tab.id}" value="${tab.url}" title="${tab.title}" name="tab"/>
+                  <input type="checkbox" id="${tab.id}" value="[${tab.title}](${tab.url})" title="${tab.title}" name="tab"/>
                   <label for="${tab.id}" title="${tab.title}">
                      <img class="favicon" src="${tab.favIconUrl ? tab.favIconUrl : fallbackFavIcon}">
                   ${tab.title}</label>
@@ -30,7 +30,7 @@ const createTabList = (tab, popupList) => {
         </div>
     `;
 
-    // use DomParser to append nodes
+    // use DOMParser to append nodes
     const parser = new DOMParser();
     const parsed = parser.parseFromString(markup, 'text/html');
     // get outer div
@@ -76,19 +76,21 @@ const tabListEvents = () => {
 
     // export all checked items as links in new tab
     exportBtn.addEventListener('click', () => {
+        // get inputs with name 'tab' from popup, url is saved as value
         const checkboxes = Array.from(document.getElementsByName('tab'));
-        let selectedTabUrls = {
-            urls: []
+        let selectedTabs = {
+            links: []
         };
 
         checkboxes.map(checkbox => {
             if (checkbox.checked) {
-                selectedTabUrls.urls.push(checkbox.value);
+                // push markdown string from input to array
+                selectedTabs.links.push(checkbox.value);
             }
         });
 
         // save urls in storage to retrieve in new tab
-        browser.storage.local.set({ selectedTabUrls })
+        browser.storage.local.set({ selectedTabs })
             .then(createNewTab, onError);
     });
 };
