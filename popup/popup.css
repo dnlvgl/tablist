@@ -16,6 +16,7 @@
 
     /* sizes */
     --popup-max-width: 350px;
+    --popup-max-height: 500px;
     --icon-size: 16px;
     --border-radius: 4px;
 }
@@ -33,6 +34,27 @@ body {
     max-width: var(--popup-max-width);
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+.panel.tablist {
+    display: flex;
+    flex-direction: column;
+    max-height: var(--popup-max-height);
+}
+
+.tablist-header {
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tablist-content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.tablist-footer {
+    flex-shrink: 0;
 }
 
 .panel-section-separator {

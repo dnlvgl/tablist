@@ -7,8 +7,8 @@
   </head>
   <body>
     <div class="panel tablist">
-      <div class="panel-section panel-section-list tablist-items">
-        <!-- first item: select all -->
+      <!-- Header: Select all -->
+      <div class="tablist-header">
         <div class="panel-list-item">
           <div class="icon"></div>
           <div class="text">
@@ -18,27 +18,36 @@
             </div>
           </div>
           <div class="text-shortcut"></div>
-          <!--append additional tabs -->
         </div>
-        <div class="panel-section-separator"></div>
       </div>
-      <div class="panel-section tablist-format-section">
-        <label for="exportFormat">Export as:</label>
-        <select id="exportFormat" class="tablist-format-select">
-          <option value="markdown">Markdown</option>
-          <option value="orgmode">Org-mode</option>
-          <option value="plain">Plain URLs</option>
-        </select>
+
+      <!-- Content: Scrollable tab list -->
+      <div class="tablist-content">
+        <div class="panel-section panel-section-list tablist-items">
+          <!-- tabs appended here by JS -->
+        </div>
       </div>
-      <div class="panel-section panel-section-footer tablist-buttons">
-        <div class="panel-section-footer-button tablist-delete-btn">Close selected</div>
-        <div class="panel-section-footer-separator"></div>
-        <div class="panel-section-footer-button default tablist-export-btn">Export selected</div>
-      </div>
-      <div class="panel-section panel-section-footer tablist-confirm hidden">
-        <div class="panel-section-footer-button tablist-cancel-btn">Cancel</div>
-        <div class="panel-section-footer-separator"></div>
-        <div class="panel-section-footer-button tablist-confirm-btn">Close <span class="tab-count"></span> tabs?</div>
+
+      <!-- Footer: Export options and buttons -->
+      <div class="tablist-footer">
+        <div class="panel-section tablist-format-section">
+          <label for="exportFormat">Export as:</label>
+          <select id="exportFormat" class="tablist-format-select">
+            <option value="markdown">Markdown</option>
+            <option value="orgmode">Org-mode</option>
+            <option value="plain">Plain URLs</option>
+          </select>
+        </div>
+        <div class="panel-section panel-section-footer tablist-buttons">
+          <div class="panel-section-footer-button tablist-delete-btn">Close selected</div>
+          <div class="panel-section-footer-separator"></div>
+          <div class="panel-section-footer-button default tablist-export-btn">Export selected</div>
+        </div>
+        <div class="panel-section panel-section-footer tablist-confirm hidden">
+          <div class="panel-section-footer-button tablist-cancel-btn">Cancel</div>
+          <div class="panel-section-footer-separator"></div>
+          <div class="panel-section-footer-button tablist-confirm-btn">Close <span class="tab-count"></span> tabs?</div>
+        </div>
       </div>
     </div>
   </body>
