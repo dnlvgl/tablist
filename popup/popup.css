@@ -21,7 +21,7 @@ body {
 }
 
 .panel-section-separator {
-    border-color: var(--border-color);
+    border-top: 1px solid var(--border-color);
 }
 
 .panel-list-item {
