@@ -47,6 +47,12 @@ body {
     margin-inline-end: 3px;
 }
 
+@media (prefers-color-scheme: dark) {
+    .favicon-fallback {
+        filter: invert(1);
+    }
+}
+
 .panel-section-footer {
     overflow-x: hidden;
     display: flex;

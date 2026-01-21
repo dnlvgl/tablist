@@ -13,7 +13,9 @@ const logTabs = (tabs) => {
 
 // create list item and append it to popup
 const createTabList = (tab, popupList) => {
-    const fallbackFavIcon = '../icons/globe.svg';
+    const fallbackFavIcon = '../icons/globe-16.svg';
+    const hasFavIcon = tab.favIconUrl;
+    const faviconClass = hasFavIcon ? 'favicon' : 'favicon favicon-fallback';
     const markup = `
         <div class="panel-list-item tablist-checkbox-wrapper">
           <div class="icon">
@@ -22,7 +24,7 @@ const createTabList = (tab, popupList) => {
               <div class="checkboxItem">
                   <input type="checkbox" id="${tab.id}" value="[${tab.title}](${tab.url})" title="${tab.title}" name="tab"/>
                   <label for="${tab.id}" title="${tab.title}">
-                     <img class="favicon" src="${tab.favIconUrl ? tab.favIconUrl : fallbackFavIcon}">
+                     <img class="${faviconClass}" src="${hasFavIcon ? tab.favIconUrl : fallbackFavIcon}">
                   ${tab.title}</label>
               </div>
           </div>
