@@ -1,8 +1,23 @@
 :root {
+    /* colors - light mode */
     --bg-color: #ffffff;
     --text-color: #15141a;
     --border-color: #cfcfd8;
     --hover-bg: rgba(12, 12, 13, 0.1);
+    --danger-bg: #c50042;
+    --danger-bg-hover: #a4003a;
+    --danger-text: #ffffff;
+
+    /* spacing */
+    --spacing-xs: 3px;
+    --spacing-sm: 4px;
+    --spacing-md: 8px;
+    --spacing-lg: 16px;
+
+    /* sizes */
+    --popup-max-width: 350px;
+    --icon-size: 16px;
+    --border-radius: 4px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +30,7 @@
 }
 
 body {
-    max-width: 350px;
+    max-width: var(--popup-max-width);
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -42,9 +57,9 @@ body {
 }
 
 .favicon {
-    width: 16px;
-    height: 16px;
-    margin-inline-end: 3px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin-inline-end: var(--spacing-xs);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,16 +71,16 @@ body {
 .tablist-format-section {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
     border-top: 1px solid var(--border-color);
 }
 
 .tablist-format-select {
     flex: 1;
-    padding: 4px 8px;
+    padding: var(--spacing-sm) var(--spacing-md);
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -93,10 +108,10 @@ body {
 }
 
 .tablist-confirm-btn {
-    background-color: #c50042;
-    color: #ffffff;
+    background-color: var(--danger-bg);
+    color: var(--danger-text);
 }
 
 .tablist-confirm-btn:hover {
-    background-color: #a4003a;
+    background-color: var(--danger-bg-hover);
 }
