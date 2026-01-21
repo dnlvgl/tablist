@@ -20,17 +20,13 @@ const createTabList = (tab, popupList) => {
     const escapedUrl = tab.url.replace(/"/g, '&quot;');
     const markup = `
         <div class="panel-list-item tablist-checkbox-wrapper">
-          <div class="icon">
-          </div>
-          <div class="text">
-              <div class="checkboxItem">
-                  <input type="checkbox" id="${tab.id}" data-title="${escapedTitle}" data-url="${escapedUrl}" title="${escapedTitle}" name="tab"/>
-                  <label for="${tab.id}" title="${escapedTitle}">
-                     <img class="${faviconClass}" src="${hasFavIcon ? tab.favIconUrl : fallbackFavIcon}">
-                  ${tab.title}</label>
-              </div>
-          </div>
-          <div class="text-shortcut"></div>
+           <div class="checkboxItem">
+               <input type="checkbox" id="${tab.id}" data-title="${escapedTitle}" data-url="${escapedUrl}" title="${escapedTitle}" name="tab"/>
+               <label for="${tab.id}" title="${escapedTitle}">
+                  <img class="${faviconClass}" src="${hasFavIcon ? tab.favIconUrl : fallbackFavIcon}">
+                  <span> ${tab.title}</span>
+               </label>
+            </div>
         </div>
     `;
 

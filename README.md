@@ -31,7 +31,23 @@ $ npm install --global web-ext
 $ web-ext run
 ```
 
-Enable debugging in Firefox under `about:debugging`
+To create a build run `web-ext build`
+
+### How to debug / inspect
+
+1. Enable debugging in Firefox under `about:debugging`
+2. Go to `This Firefox`
+3. Check for `Tablist` and click `Inspect`
+4. In the Inspect window go to the 3 dot menu and check `Disable Popup Auto-Hide`
+
+## Usage 
+
+Unsigned addons can only be installed in the Developer Edition or Nightly
+
+1. Go to `about:config`
+2. Set `xpinstall.signatures.required` to `false`
+3. Load the extension via `about:addons` - Install Add-on From File
+
 
 ## Misc
 
@@ -41,7 +57,8 @@ Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
 
 - [x] Fix missing tab fallback icon
 - [x] Export links as plain list, Markdown, or Org-mode
-- [x] Cleanup CSS, move values to variables
+- [x] Cleanup CSS, move
+values to variables
 - [ ] Fix overflowing long link names
 
 ### Maybe
