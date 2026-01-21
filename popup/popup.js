@@ -154,6 +154,8 @@ const tabListEvents = () => {
             }
         });
 
+        if (selectedTabs.links.length === 0) return;
+
         // save urls in storage to retrieve in new tab
         browser.storage.local.set({ selectedTabs })
             .then(createNewTab, onError);

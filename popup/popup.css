@@ -45,6 +45,7 @@ body {
 .tablist-header {
     flex-shrink: 0;
     border-bottom: 1px solid var(--border-color);
+    margin-top: var(--spacing-sm);
 }
 
 .tablist-content {
@@ -55,6 +56,7 @@ body {
 
 .tablist-footer {
     flex-shrink: 0;
+    margin-top: var(--spacing-sm);
 }
 
 .panel-section-separator {
@@ -77,6 +79,7 @@ body {
     display: flex;
     align-items: center;
     min-width: 0;
+    margin-left: var(--spacing-xs);
 }
 
 .favicon {

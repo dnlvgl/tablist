@@ -59,7 +59,8 @@ Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
 - [x] Export links as plain list, Markdown, or Org-mode
 - [x] Cleanup CSS, move values to variables
 - [x] Fix overflowing long link names
-- [ ] Nice spacing
+- [x] Nicer spacing
+- [ ] Publish
 
 ### Maybe
 
