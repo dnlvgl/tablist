@@ -31,7 +31,14 @@ $ npm install --global web-ext
 $ web-ext run
 ```
 
-To create a build run `web-ext build`
+To create a build and sign
+
+``` sh
+$ web-ext build
+$ web-ext sign --channel=listed --amo-metadata=./amo.json --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET
+```
+
+web-ext build`
 
 ### How to debug / inspect
 

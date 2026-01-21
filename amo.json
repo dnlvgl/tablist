@@ -1,0 +1,7 @@
+{
+    "version": { "license": "GPL-3.0-only" },
+    "description": {"en-US": "Delete or export multiple tabs"},
+    "summary": {"en-US": "Tablist is a lightweight extension to delete or export multiple tabs. Select multiple tabs to export their URLs as Markdown, Org-mode, or plain text links, or close them all at once with a single click"},
+    "categories": { "firefox": ["tabs"] },
+    "homepage_url": "https://github.com/dnlvgl/tablist"
+}
