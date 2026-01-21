@@ -49,10 +49,16 @@ body {
 
 .panel-section-footer {
     overflow-x: hidden;
+    display: flex;
 }
 
 .panel-section-footer-button {
     color: var(--text-color);
+    flex: 1;
+}
+
+.panel-section-footer-separator {
+    flex: 0;
 }
 
 .panel-section-footer-button:hover {
