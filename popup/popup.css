@@ -54,3 +54,20 @@ body {
 .panel-section-footer-button {
     color: var(--text-color);
 }
+
+.panel-section-footer-button:hover {
+    background-color: var(--hover-bg);
+}
+
+.hidden {
+    display: none;
+}
+
+.tablist-confirm-btn {
+    background-color: #c50042;
+    color: #ffffff;
+}
+
+.tablist-confirm-btn:hover {
+    background-color: #a4003a;
+}

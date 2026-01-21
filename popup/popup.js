@@ -45,7 +45,36 @@ const tabListEvents = () => {
     // add event listener on wrapper and check for class?
     const toggleSelect = document.getElementById('selectAll'),
         deleteBtn = document.querySelector('.tablist-delete-btn'),
-        exportBtn = document.querySelector('.tablist-export-btn')
+        exportBtn = document.querySelector('.tablist-export-btn'),
+        buttonsFooter = document.querySelector('.tablist-buttons'),
+        confirmFooter = document.querySelector('.tablist-confirm'),
+        cancelBtn = document.querySelector('.tablist-cancel-btn'),
+        confirmBtn = document.querySelector('.tablist-confirm-btn'),
+        tabCountSpan = document.querySelector('.tab-count')
+
+    let confirmTimeout = null;
+    let selectedTabIds = [];
+
+    const getSelectedTabIds = () => {
+        const checkboxes = Array.from(document.getElementsByName('tab'));
+        return checkboxes
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => parseInt(checkbox.id));
+    };
+
+    const showConfirmation = () => {
+        buttonsFooter.classList.add('hidden');
+        confirmFooter.classList.remove('hidden');
+    };
+
+    const hideConfirmation = () => {
+        confirmFooter.classList.add('hidden');
+        buttonsFooter.classList.remove('hidden');
+        if (confirmTimeout) {
+            clearTimeout(confirmTimeout);
+            confirmTimeout = null;
+        }
+    };
 
     // check or uncheck all items in tablist
     toggleSelect.addEventListener('click', (event) => {
@@ -60,18 +89,27 @@ const tabListEvents = () => {
         });
     });
 
-    // collect and delete all checked items
+    // show confirmation before deleting
     deleteBtn.addEventListener('click', () => {
-        const checkboxes = Array.from(document.getElementsByName('tab'));
-        let selectedTabIds = [];
-        checkboxes.map(checkbox => {
-            if (checkbox.checked) {
-                console.log(checkbox);
-                selectedTabIds.push(parseInt(checkbox.id));
-            }
-        });
-        browser.tabs.remove(selectedTabIds)
-            .then(closePopup, onError);
+        selectedTabIds = getSelectedTabIds();
+        if (selectedTabIds.length === 0) return;
+
+        tabCountSpan.textContent = selectedTabIds.length;
+        showConfirmation();
+
+        // auto-revert after 5 seconds
+        confirmTimeout = setTimeout(hideConfirmation, 5000);
+    });
+
+    // cancel confirmation
+    cancelBtn.addEventListener('click', hideConfirmation);
+
+    // confirm and delete tabs
+    confirmBtn.addEventListener('click', () => {
+        if (selectedTabIds.length > 0) {
+            browser.tabs.remove(selectedTabIds)
+                .then(closePopup, onError);
+        }
     });
 
     // export all checked items as links in new tab
