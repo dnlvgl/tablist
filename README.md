@@ -4,10 +4,16 @@ Show all open tabs in a popup. Select or export multiple tabs.
 
 At the moment all tabs of all windows are shown.
 
+## Screenshots
+
+![Tablist popup](screenshots/tablist.jpg)
+![Close confirmation](screenshots/tablist-delete.jpg)
+
 ## Features
 
-- Delete selected tabs
-- Export selected tab URLs in new tab as markdown links
+- Close selected tabs (with confirmation dialog)
+- Export selected tab URLs in new tab as Markdown, Org-mode, or plain URLs
+- Dark and light mode support
 - Components styled after [Firefox Style Guide](https://firefoxux.github.io/StyleGuide/#/welcome)
 
 ## Permissions
@@ -33,13 +39,12 @@ Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
 
 ## Todo
 
-- [x] fix missing tab fallback icon `const fallbackFavIcon = '../icons/globe.svg';`
-- [x] export link either as plain list, markdown or orgmode link
-- [x] cleanup css, move more stuff to global variables
-- [] fix overflowing long link names
-- [] adjust spacing of popup content
+- [x] Fix missing tab fallback icon
+- [x] Export links as plain list, Markdown, or Org-mode
+- [x] Cleanup CSS, move values to variables
+- [ ] Fix overflowing long link names
 
-Maybe
+### Maybe
 
-- [] update to acorn design system: https://acorn.firefox.com/latest/home/acorn-aRSAh0Sp
-- [] update to manifest 3
+- [ ] Update to Acorn design system: https://acorn.firefox.com/latest/home/acorn-aRSAh0Sp
+- [ ] Update to manifest v3
