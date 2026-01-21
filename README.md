@@ -48,7 +48,6 @@ Unsigned addons can only be installed in the Developer Edition or Nightly
 2. Set `xpinstall.signatures.required` to `false`
 3. Load the extension via `about:addons` - Install Add-on From File
 
-
 ## Misc
 
 Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
