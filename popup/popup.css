@@ -76,12 +76,20 @@ body {
 .checkboxItem label {
     display: flex;
     align-items: center;
+    min-width: 0;
 }
 
 .favicon {
     width: var(--icon-size);
     height: var(--icon-size);
     margin-inline-end: var(--spacing-xs);
+}
+
+.label-text {
+    display: inline-block;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media (prefers-color-scheme: dark) {

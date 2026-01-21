@@ -24,7 +24,7 @@ const createTabList = (tab, popupList) => {
                <input type="checkbox" id="${tab.id}" data-title="${escapedTitle}" data-url="${escapedUrl}" title="${escapedTitle}" name="tab"/>
                <label for="${tab.id}" title="${escapedTitle}">
                   <img class="${faviconClass}" src="${hasFavIcon ? tab.favIconUrl : fallbackFavIcon}">
-                  <span> ${tab.title}</span>
+                  <span class="label-text"> ${tab.title}</span>
                </label>
             </div>
         </div>
