@@ -34,6 +34,7 @@ Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
 ## Todo
 
 - [x] fix missing tab fallback icon `const fallbackFavIcon = '../icons/globe.svg';`
-- [] export link either as plain list, markdown or orgmode link
+- [x] export link either as plain list, markdown or orgmode link
+- [] cleanup css, move more stuff to global variables
 - [] adjust spacing of popup content
 - [] update to acorn design system: https://acorn.firefox.com/latest/home/acorn-aRSAh0Sp

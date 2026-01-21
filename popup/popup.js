@@ -16,14 +16,16 @@ const createTabList = (tab, popupList) => {
     const fallbackFavIcon = '../icons/globe-16.svg';
     const hasFavIcon = tab.favIconUrl;
     const faviconClass = hasFavIcon ? 'favicon' : 'favicon favicon-fallback';
+    const escapedTitle = tab.title.replace(/"/g, '&quot;');
+    const escapedUrl = tab.url.replace(/"/g, '&quot;');
     const markup = `
         <div class="panel-list-item tablist-checkbox-wrapper">
           <div class="icon">
           </div>
           <div class="text">
               <div class="checkboxItem">
-                  <input type="checkbox" id="${tab.id}" value="[${tab.title}](${tab.url})" title="${tab.title}" name="tab"/>
-                  <label for="${tab.id}" title="${tab.title}">
+                  <input type="checkbox" id="${tab.id}" data-title="${escapedTitle}" data-url="${escapedUrl}" title="${escapedTitle}" name="tab"/>
+                  <label for="${tab.id}" title="${escapedTitle}">
                      <img class="${faviconClass}" src="${hasFavIcon ? tab.favIconUrl : fallbackFavIcon}">
                   ${tab.title}</label>
               </div>
@@ -42,6 +44,19 @@ const createTabList = (tab, popupList) => {
     };
 };
 
+// format link based on selected format
+const formatLink = (title, url, format) => {
+    switch (format) {
+        case 'orgmode':
+            return `[[${url}][${title}]]`;
+        case 'plain':
+            return url;
+        case 'markdown':
+        default:
+            return `[${title}](${url})`;
+    }
+};
+
 // create all needed event listeners
 const tabListEvents = () => {
     // add event listener on wrapper and check for class?
@@ -52,7 +67,20 @@ const tabListEvents = () => {
         confirmFooter = document.querySelector('.tablist-confirm'),
         cancelBtn = document.querySelector('.tablist-cancel-btn'),
         confirmBtn = document.querySelector('.tablist-confirm-btn'),
-        tabCountSpan = document.querySelector('.tab-count')
+        tabCountSpan = document.querySelector('.tab-count'),
+        formatSelect = document.getElementById('exportFormat')
+
+    // load saved format preference
+    browser.storage.local.get('exportFormat').then(result => {
+        if (result.exportFormat) {
+            formatSelect.value = result.exportFormat;
+        }
+    }, onError);
+
+    // save format preference when changed
+    formatSelect.addEventListener('change', () => {
+        browser.storage.local.set({ exportFormat: formatSelect.value });
+    });
 
     let confirmTimeout = null;
     let selectedTabIds = [];
@@ -116,16 +144,17 @@ const tabListEvents = () => {
 
     // export all checked items as links in new tab
     exportBtn.addEventListener('click', () => {
-        // get inputs with name 'tab' from popup, url is saved as value
         const checkboxes = Array.from(document.getElementsByName('tab'));
+        const format = formatSelect.value;
         let selectedTabs = {
             links: []
         };
 
         checkboxes.map(checkbox => {
             if (checkbox.checked) {
-                // push markdown string from input to array
-                selectedTabs.links.push(checkbox.value);
+                const title = checkbox.dataset.title;
+                const url = checkbox.dataset.url;
+                selectedTabs.links.push(formatLink(title, url, format));
             }
         });
 

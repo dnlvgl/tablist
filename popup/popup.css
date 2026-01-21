@@ -53,6 +53,23 @@ body {
     }
 }
 
+.tablist-format-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tablist-format-select {
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
 .panel-section-footer {
     overflow-x: hidden;
     display: flex;
