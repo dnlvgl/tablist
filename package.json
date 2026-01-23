@@ -1,6 +1,6 @@
 {
   "name": "tablist",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Firefox extension to delete or export multiple tabs",
   "private": true,
   "scripts": {
