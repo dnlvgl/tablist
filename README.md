@@ -61,13 +61,8 @@ Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
 
 ## Todo
 
-- [x] Fix missing tab fallback icon
-- [x] Export links as plain list, Markdown, or Org-mode
-- [x] Cleanup CSS, move values to variables
-- [x] Fix overflowing long link names
-- [x] Nicer spacing
-- [ ] fix min width when no long urls present
-- [ ] fix button text color in light mode
+- [ ] When in closing state, the closing confirmation vanishes after a while
+- [ ] Bump version
 - [ ] Publish
 
 ### Maybe

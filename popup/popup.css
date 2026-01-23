@@ -7,6 +7,9 @@
   --danger-bg: #c50042;
   --danger-bg-hover: #a4003a;
   --danger-text: #ffffff;
+  --primary-bg: #0060df;
+  --primary-bg-hover: #003eaa;
+  --primary-text: #ffffff;
 
   /* spacing */
   --spacing-xs: 3px;
@@ -15,7 +18,7 @@
   --spacing-lg: 16px;
 
   /* sizes */
-  --popup-max-width: 350px;
+  --popup-width: 320px;
   --popup-max-height: 500px;
   --icon-size: 16px;
   --border-radius: 4px;
@@ -31,7 +34,7 @@
 }
 
 body {
-  max-width: var(--popup-max-width);
+  width: var(--popup-width);
   background-color: var(--bg-color);
   color: var(--text-color);
 }
@@ -126,6 +129,11 @@ body {
 .panel-section-footer-button {
   color: var(--text-color);
   flex: 1;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .panel-section-footer-separator {
@@ -134,6 +142,15 @@ body {
 
 .panel-section-footer-button:hover {
   background-color: var(--hover-bg);
+}
+
+.panel-section-footer-button.default {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.panel-section-footer-button.default:hover {
+  background-color: var(--primary-bg-hover);
 }
 
 .hidden {
