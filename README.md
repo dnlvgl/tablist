@@ -58,13 +58,3 @@ Unsigned addons can only be installed in the Developer Edition or Nightly
 ## Misc
 
 Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
-
-## Todo
-
-- [ ] Bump version
-- [ ] Publish
-
-### Maybe
-
-- [ ] Update to Acorn design system: https://acorn.firefox.com/latest/home/acorn-aRSAh0Sp
-- [ ] Update to manifest v3
