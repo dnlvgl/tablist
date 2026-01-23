@@ -1,29 +1,27 @@
 {
-    "manifest_version": 2,
-    "name": "Tablist",
-    "version": "0.1.1",
-    "description": "Delete or export multiple tabs",
-    "browser_specific_settings": {"gecko": {"id": "{b65fac8d-5101-447b-b23a-e5b0be24e099}"}},
-    "permissions":
-    [
-	    "tabs",
-      "storage",
-      "activeTab"
-    ],
+  "manifest_version": 2,
+  "name": "Tablist",
+  "version": "0.1.1",
+  "description": "Delete or export multiple tabs",
+  "browser_specific_settings": { "gecko": { "id": "{b65fac8d-5101-447b-b23a-e5b0be24e099}" } },
+  "permissions": ["tabs", "storage", "activeTab"],
 
-    "browser_action": {
-	    "default_icon": "icons/tablist-48.png",
-	    "default_title": "tablist",
-      "default_popup": "popup/popup.html",
-      "browser_style": true,
-      "theme_icons": [{
+  "browser_action": {
+    "default_icon": "icons/tablist-48.png",
+    "default_title": "tablist",
+    "default_popup": "popup/popup.html",
+    "browser_style": true,
+    "theme_icons": [
+      {
         "light": "icons/tablist-16-light.png",
         "dark": "icons/tablist-16.png",
         "size": 16
-      }, {
+      },
+      {
         "light": "icons/tablist-32-light.png",
         "dark": "icons/tablist-32.png",
         "size": 32
-      }]
-    }
+      }
+    ]
+  }
 }

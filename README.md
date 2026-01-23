@@ -66,6 +66,8 @@ Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
 - [x] Cleanup CSS, move values to variables
 - [x] Fix overflowing long link names
 - [x] Nicer spacing
+- [ ] fix min width when no long urls present
+- [ ] fix button text color in light mode
 - [ ] Publish
 
 ### Maybe

@@ -1,0 +1,24 @@
+{
+  "name": "tablist",
+  "version": "0.1.1",
+  "description": "Firefox extension to delete or export multiple tabs",
+  "private": true,
+  "scripts": {
+    "start": "web-ext run",
+    "build": "web-ext build --overwrite-dest",
+    "lint": "web-ext lint",
+    "biome": "biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.12",
+    "web-ext": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dnldsht/tablist"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "engines": {
+    "node": ">=18"
+  }
+}
