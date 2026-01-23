@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Tablist",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Delete or export multiple tabs",
   "browser_specific_settings": { "gecko": { "id": "{b65fac8d-5101-447b-b23a-e5b0be24e099}" } },
   "permissions": ["tabs", "storage", "activeTab"],
