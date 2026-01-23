@@ -38,8 +38,6 @@ $ web-ext build
 $ web-ext sign --channel=listed --amo-metadata=./amo.json --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET
 ```
 
-web-ext build`
-
 ### How to debug / inspect
 
 1. Enable debugging in Firefox under `about:debugging`
