@@ -77,7 +77,6 @@ const tabListEvents = () => {
     browser.storage.local.set({ exportFormat: formatSelect.value });
   });
 
-  let confirmTimeout = null;
   let selectedTabIds = [];
 
   const getSelectedTabIds = () => {
@@ -95,10 +94,6 @@ const tabListEvents = () => {
   const hideConfirmation = () => {
     confirmFooter.classList.add('hidden');
     buttonsFooter.classList.remove('hidden');
-    if (confirmTimeout) {
-      clearTimeout(confirmTimeout);
-      confirmTimeout = null;
-    }
   };
 
   // check or uncheck all items in tablist
@@ -117,9 +112,6 @@ const tabListEvents = () => {
 
     tabCountSpan.textContent = selectedTabIds.length;
     showConfirmation();
-
-    // auto-revert after 5 seconds
-    confirmTimeout = setTimeout(hideConfirmation, 5000);
   });
 
   // cancel confirmation

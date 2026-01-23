@@ -61,7 +61,6 @@ Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
 
 ## Todo
 
-- [ ] When in closing state, the closing confirmation vanishes after a while
 - [ ] Bump version
 - [ ] Publish
 
