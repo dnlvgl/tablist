@@ -4,6 +4,10 @@ Show all open tabs in a popup. Select or export multiple tabs.
 
 At the moment all tabs of all windows are shown.
 
+## Install
+
+Get it fom [Firefox Add-ons](https://addons.mozilla.org/de/android/addon/tablist1/)
+
 ## Screenshots
 
 ![Tablist popup](screenshots/tablist.jpg)
@@ -44,14 +48,6 @@ $ web-ext sign --channel=listed --amo-metadata=./amo.json --api-key=$AMO_JWT_ISS
 2. Go to `This Firefox`
 3. Check for `Tablist` and click `Inspect`
 4. In the Inspect window go to the 3 dot menu and check `Disable Popup Auto-Hide`
-
-## Usage 
-
-Unsigned addons can only be installed in the Developer Edition or Nightly
-
-1. Go to `about:config`
-2. Set `xpinstall.signatures.required` to `false`
-3. Load the extension via `about:addons` - Install Add-on From File
 
 ## Misc
 
