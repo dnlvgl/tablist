@@ -6,7 +6,7 @@ At the moment all tabs of all windows are shown.
 
 ## Install
 
-Get it fom [Firefox Add-ons](https://addons.mozilla.org/de/android/addon/tablist1/)
+Get it fom [Firefox Add-ons](https://addons.mozilla.org/de/firefox/addon/tablist1/)
 
 ## Screenshots
 
