@@ -42,6 +42,18 @@ $ web-ext build
 $ web-ext sign --channel=listed --amo-metadata=./amo.json --api-key=$AMO_JWT_ISSUER --api-secret=$AMO_JWT_SECRET
 ```
 
+### Releasing
+
+Pushing a tag triggers the GitHub Actions workflow that lints, builds, submits to AMO, and creates a GitHub Release with the `.zip` attached.
+
+```sh
+# bump version in manifest.json and package.json, then commit
+git tag v0.3.0
+git push --tags
+```
+
+The workflow validates that the tag version matches `manifest.json` before proceeding. `API_KEY` and `API_SECRET` repository secrets are required for AMO submission.
+
 ### How to debug / inspect
 
 1. Enable debugging in Firefox under `about:debugging`
