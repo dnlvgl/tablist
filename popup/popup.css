@@ -183,7 +183,7 @@ body {
 .tab-group-header {
   display: flex;
   align-items: center;
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: var(--spacing-sm);
   background-color: var(--hover-bg);
   border-bottom: 1px solid var(--border-color);
   gap: var(--spacing-xs);
