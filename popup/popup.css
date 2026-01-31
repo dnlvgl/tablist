@@ -2,6 +2,7 @@
   /* colors - light mode */
   --bg-color: #ffffff;
   --text-color: #15141a;
+  --text-secondary: #5b5b66;
   --border-color: #cfcfd8;
   --hover-bg: rgba(12, 12, 13, 0.1);
   --danger-bg: #c50042;
@@ -10,6 +11,17 @@
   --primary-bg: #0060df;
   --primary-bg-hover: #003eaa;
   --primary-text: #ffffff;
+
+  /* tab group colors */
+  --group-blue: #0a84ff;
+  --group-cyan: #00b3f4;
+  --group-grey: #5b5b66;
+  --group-green: #54a359;
+  --group-orange: #ff9500;
+  --group-pink: #ff6bff;
+  --group-purple: #9059ff;
+  --group-red: #ff4f5e;
+  --group-yellow: #ffbd4f;
 
   /* spacing */
   --spacing-xs: 3px;
@@ -28,6 +40,7 @@
   :root {
     --bg-color: #2b2a33;
     --text-color: #fbfbfe;
+    --text-secondary: #b1b1b3;
     --border-color: #52525e;
     --hover-bg: rgba(255, 255, 255, 0.1);
   }
@@ -164,4 +177,126 @@ body {
 
 .tablist-confirm-btn:hover {
   background-color: var(--danger-bg-hover);
+}
+
+/* Tab group styles */
+.tab-group-header {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm);
+  background-color: var(--hover-bg);
+  border-bottom: 1px solid var(--border-color);
+  gap: var(--spacing-xs);
+}
+
+.tab-group-header:hover {
+  background-color: var(--hover-bg);
+}
+
+.group-collapse-btn {
+  background: none;
+  border: none;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 10px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.group-collapse-btn:hover {
+  background-color: var(--hover-bg);
+  border-radius: var(--border-radius);
+}
+
+.group-checkbox {
+  margin: 0;
+}
+
+.group-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.group-color-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.group-color-blue {
+  background-color: var(--group-blue);
+}
+.group-color-cyan {
+  background-color: var(--group-cyan);
+}
+.group-color-grey {
+  background-color: var(--group-grey);
+}
+.group-color-green {
+  background-color: var(--group-green);
+}
+.group-color-orange {
+  background-color: var(--group-orange);
+}
+.group-color-pink {
+  background-color: var(--group-pink);
+}
+.group-color-purple {
+  background-color: var(--group-purple);
+}
+.group-color-red {
+  background-color: var(--group-red);
+}
+.group-color-yellow {
+  background-color: var(--group-yellow);
+}
+
+.group-title {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.group-tab-count {
+  color: var(--text-secondary);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.tab-group-container {
+  overflow: hidden;
+}
+
+.tab-group-container.collapsed {
+  display: none;
+}
+
+.grouped-tab {
+  padding-left: var(--spacing-lg);
+}
+
+.ungrouped-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-top: var(--spacing-sm);
+}
+
+.ungrouped-label {
+  color: var(--text-secondary);
+  font-size: 12px;
 }

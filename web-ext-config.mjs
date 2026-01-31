@@ -1,7 +1,7 @@
 export default {
-  build: {overwriteDest: true},
+  build: { overwriteDest: true },
   run: {
-    startUrl: ["about:debugging"], // Open URLs on start
+    startUrl: ['about:debugging'], // Open URLs on start
   },
   ignoreFiles: [
     'docs/**',
@@ -12,6 +12,6 @@ export default {
     'biome.json',
     'package.json',
     'package-lock.json',
-    'web-ext-config.cjs'
-  ]
+    'web-ext-config.cjs',
+  ],
 };
