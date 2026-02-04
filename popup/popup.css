@@ -261,6 +261,14 @@ body {
   background-color: var(--group-yellow);
 }
 
+.pinned-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-color: var(--text-secondary);
+}
+
 .group-title {
   font-weight: 500;
   overflow: hidden;

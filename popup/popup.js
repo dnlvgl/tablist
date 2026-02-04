@@ -17,12 +17,15 @@ const renderTabList = (tabs, groups) => {
   const popupList = document.querySelector('.tablist-items');
   const groupMap = new Map(groups.map((g) => [g.id, g]));
 
-  // Group tabs by groupId
+  // Separate tabs into pinned, grouped, and ungrouped
+  const pinnedTabs = [];
   const groupedTabs = new Map();
   const ungroupedTabs = [];
 
   for (const tab of tabs) {
-    if (tab.groupId && tab.groupId !== -1) {
+    if (tab.pinned) {
+      pinnedTabs.push(tab);
+    } else if (tab.groupId && tab.groupId !== -1) {
       if (!groupedTabs.has(tab.groupId)) {
         groupedTabs.set(tab.groupId, []);
       }
@@ -32,7 +35,16 @@ const renderTabList = (tabs, groups) => {
     }
   }
 
-  // Render grouped tabs first
+  // Render pinned tabs first
+  if (pinnedTabs.length > 0) {
+    createPinnedHeader(pinnedTabs.length, popupList);
+    const pinnedContainer = createGroupContainer('pinned', popupList);
+    for (const tab of pinnedTabs) {
+      createTabItem(tab, pinnedContainer, 'pinned');
+    }
+  }
+
+  // Render grouped tabs
   for (const [groupId, groupTabs] of groupedTabs) {
     const group = groupMap.get(groupId);
     if (group) {
@@ -46,7 +58,7 @@ const renderTabList = (tabs, groups) => {
 
   // Render ungrouped tabs
   if (ungroupedTabs.length > 0) {
-    if (groupedTabs.size > 0) {
+    if (groupedTabs.size > 0 || pinnedTabs.length > 0) {
       createUngroupedHeader(ungroupedTabs.length, popupList);
     }
     for (const tab of ungroupedTabs) {
@@ -70,6 +82,28 @@ const createGroupHeader = (group, tabCount, container) => {
       <label for="group-${group.id}" class="group-label">
         <span class="group-color-indicator group-color-${color}"></span>
         <span class="group-title">${title}</span>
+        <span class="group-tab-count">(${tabCount})</span>
+      </label>
+    </div>
+  `;
+
+  const parser = new DOMParser();
+  const parsed = parser.parseFromString(markup, 'text/html');
+  const header = parsed.querySelector('.tab-group-header');
+  container.appendChild(header);
+};
+
+// Create a header for pinned tabs section
+const createPinnedHeader = (tabCount, container) => {
+  const markup = `
+    <div class="tab-group-header" data-group-id="pinned" data-collapsed="false">
+      <button class="group-collapse-btn" aria-expanded="true" aria-label="Toggle pinned tabs">
+        <span class="collapse-icon">▼</span>
+      </button>
+      <input type="checkbox" class="group-checkbox" id="group-pinned" data-group-id="pinned">
+      <label for="group-pinned" class="group-label">
+        <span class="pinned-indicator"></span>
+        <span class="group-title">Pinned</span>
         <span class="group-tab-count">(${tabCount})</span>
       </label>
     </div>
@@ -106,13 +140,13 @@ const createUngroupedHeader = (tabCount, container) => {
 };
 
 // Create individual tab item
-const createTabItem = (tab, container) => {
+const createTabItem = (tab, container, overrideGroupId) => {
   const fallbackFavIcon = '../icons/globe-16.svg';
   const hasFavIcon = tab.favIconUrl;
   const faviconClass = hasFavIcon ? 'favicon' : 'favicon favicon-fallback';
   const escapedTitle = tab.title.replace(/"/g, '&quot;');
   const escapedUrl = tab.url.replace(/"/g, '&quot;');
-  const groupId = tab.groupId && tab.groupId !== -1 ? tab.groupId : '';
+  const groupId = overrideGroupId || (tab.groupId && tab.groupId !== -1 ? tab.groupId : '');
 
   const markup = `
     <div class="panel-list-item tablist-checkbox-wrapper${groupId ? ' grouped-tab' : ''}">
