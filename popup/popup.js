@@ -37,7 +37,11 @@ const renderTabList = (tabs, groups) => {
 
   // Render pinned tabs first as a virtual group
   if (pinnedTabs.length > 0) {
-    createGroupHeader({ id: 'pinned', title: 'Pinned', color: 'grey' }, pinnedTabs.length, popupList);
+    createGroupHeader(
+      { id: 'pinned', title: 'Pinned', color: 'grey' },
+      pinnedTabs.length,
+      popupList,
+    );
     const pinnedContainer = createGroupContainer('pinned', popupList);
     for (const tab of pinnedTabs) {
       createTabItem(tab, pinnedContainer, 'pinned');
