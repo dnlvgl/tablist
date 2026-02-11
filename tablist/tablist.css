@@ -7,8 +7,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #1c1b22;
-    --text-color: #fbfbfe;
+    --bg-color: #15141a;
+    --text-color: #ffffff;
     --link-color: #00ddff;
     --link-hover-color: #80ebff;
   }
@@ -33,6 +33,9 @@ a:hover {
 .urlist {
   list-style-type: none;
   padding-left: 0;
+  max-width: 1000px;
+  margin: auto;
+  line-break: anywhere;
 }
 
 .urlist li {
