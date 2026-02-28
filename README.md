@@ -63,4 +63,12 @@ The workflow validates that the tag version matches `manifest.json` before proce
 
 ## Misc
 
-Icons from [Firefox Photon Icons](https://design.firefox.com/icons/viewer/)
+Icon remixed from [Firefox Acorn Icons](https://acorn.firefox.com/latest/desktop/styles/iconography-OJ7DtlvA)
+
+
+## Todo v0.4.0
+
+- [x] refresh icon
+- [ ] refresh screenshot in git + store page
+- [ ] ui refresh
+- [ ] export directly to clipboard, skip dedicated page 
