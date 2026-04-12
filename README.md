@@ -1,3 +1,4 @@
+
 # Tablist Add-on for Firefox
 
 Show all open tabs in a popup. Select or export multiple tabs.
@@ -66,9 +67,7 @@ The workflow validates that the tag version matches `manifest.json` before proce
 Icon remixed from [Firefox Acorn Icons](https://acorn.firefox.com/latest/desktop/styles/iconography-OJ7DtlvA)
 
 
-## Todo v0.4.0
+## Todo
 
-- [x] refresh icon
 - [ ] refresh screenshot in git + store page
-- [ ] ui refresh
-- [ ] export directly to clipboard, skip dedicated page 
+- [ ] cleanup variables in css

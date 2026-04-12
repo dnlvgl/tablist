@@ -24,6 +24,18 @@ const createTabList = (storage) => {
     listItem.appendChild(document.createTextNode(item));
     listElement.appendChild(listItem);
   });
+
+  const copyBtn = document.getElementById('copy-btn');
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(storage.selectedTabs.links.join('\n')).then(() => {
+      copyBtn.textContent = 'Copied!';
+      copyBtn.disabled = true;
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy all';
+        copyBtn.disabled = false;
+      }, 2000);
+    });
+  });
 };
 
 const onError = (error) => {
