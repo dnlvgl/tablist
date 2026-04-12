@@ -147,6 +147,11 @@ const createTabItem = (tab, container, overrideGroupId) => {
   const parser = new DOMParser();
   const parsed = parser.parseFromString(markup, 'text/html');
   const item = parsed.querySelector('.panel-list-item');
+  item.addEventListener('click', (e) => {
+    if (!e.target.closest('label') && e.target.tagName !== 'INPUT') {
+      item.querySelector('input[type="checkbox"]').click();
+    }
+  });
   container.appendChild(item);
 };
 
