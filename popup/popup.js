@@ -80,7 +80,9 @@ const createGroupHeader = (group, tabCount, container) => {
   const markup = `
     <div class="tab-group-header" data-group-id="${group.id}" data-collapsed="${collapsed}">
       <button class="group-collapse-btn" aria-expanded="${!collapsed}" aria-label="Toggle group">
-        <span class="collapse-icon">${collapsed ? '▶' : '▼'}</span>
+        <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 4l4 4 4-4"/>
+        </svg>
       </button>
       <input type="checkbox" class="group-checkbox" id="group-${group.id}" data-group-id="${group.id}">
       <label for="group-${group.id}" class="group-label">
@@ -294,7 +296,6 @@ const tabListEvents = () => {
 
     header.dataset.collapsed = newCollapsed;
     collapseBtn.setAttribute('aria-expanded', !newCollapsed);
-    collapseBtn.querySelector('.collapse-icon').textContent = newCollapsed ? '▶' : '▼';
 
     const container = document.querySelector(`.tab-group-container[data-group-id="${groupId}"]`);
     if (container) {

@@ -12,6 +12,8 @@ const updateTitle = () => {
   });
   const time = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
   document.title = `Tablist Export ${date} ${time}`;
+  const timestampEl = document.getElementById('export-timestamp');
+  if (timestampEl) timestampEl.textContent = `${date} ${time}`;
 };
 
 // get all links from storage an display in list

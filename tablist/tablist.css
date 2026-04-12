@@ -1,16 +1,24 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #15141a;
+  --text-secondary: #5b5b66;
+  --border-color: #cfcfd8;
   --link-color: #0060df;
   --link-hover-color: #003eaa;
+  --section-bg: #f0f0f4;
+  --code-bg: #f9f9fb;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #15141a;
-    --text-color: #ffffff;
+    --bg-color: #1c1b22;
+    --text-color: #fbfbfe;
+    --text-secondary: #b1b1b3;
+    --border-color: #52525e;
     --link-color: #00ddff;
     --link-hover-color: #80ebff;
+    --section-bg: #2b2a33;
+    --code-bg: #23222a;
   }
 }
 
@@ -18,7 +26,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: system-ui, -apple-system, sans-serif;
-  padding: 16px;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -30,14 +38,60 @@ a:hover {
   color: var(--link-hover-color);
 }
 
+.export-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 10;
+}
+
+.export-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.export-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.export-timestamp {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.export-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.export-block {
+  background: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
 .urlist {
-  list-style-type: none;
-  padding-left: 0;
-  max-width: 1000px;
-  margin: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  font-size: 13px;
   line-break: anywhere;
 }
 
 .urlist li {
-  margin-bottom: 8px;
+  padding: 4px 0;
+}
+
+.urlist li:last-child {
+  border-bottom: none;
 }
