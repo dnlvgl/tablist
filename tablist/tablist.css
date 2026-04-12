@@ -3,21 +3,35 @@
   --text-color: #15141a;
   --text-secondary: #5b5b66;
   --border-color: #cfcfd8;
+  --hover-bg: rgba(0, 0, 0, 0.08);
   --link-color: #0060df;
   --link-hover-color: #003eaa;
+  --primary-bg: #0060df;
+  --primary-bg-hover: #003eaa;
   --section-bg: #f0f0f4;
   --code-bg: #f9f9fb;
+
+  /* spacing */
+  --spacing-sm: 4px;
+  --spacing-md: 8px;
+  --spacing-lg: 16px;
+
+  /* sizes */
+  --border-radius: 4px;
+  --border-radius-lg: 8px;
+  --footer-height: 36px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #1c1b22;
+    --bg-color: #2b2a33;
     --text-color: #fbfbfe;
     --text-secondary: #b1b1b3;
     --border-color: #52525e;
+    --hover-bg: rgba(255, 255, 255, 0.1);
     --link-color: #00ddff;
     --link-hover-color: #80ebff;
-    --section-bg: #2b2a33;
+    --section-bg: #3a3944;
     --code-bg: #23222a;
   }
 }
@@ -41,7 +55,7 @@ a:hover {
 .export-header {
   position: sticky;
   top: 0;
-  background-color: var(--bg-color);
+  background-color: var(--section-bg);
   border-bottom: 1px solid var(--border-color);
   z-index: 10;
 }
@@ -49,15 +63,18 @@ a:hover {
 .export-header-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 12px 24px;
+  padding: var(--spacing-md) 24px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--spacing-md);
 }
 
 .export-title {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   margin: 0;
 }
 
@@ -70,16 +87,19 @@ a:hover {
 .copy-btn {
   font: inherit;
   font-size: 13px;
-  padding: 4px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background-color: var(--section-bg);
-  color: var(--text-color);
+  height: var(--footer-height);
+  padding: 0 var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-bg);
+  color: #ffffff;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .copy-btn:hover {
-  background-color: var(--border-color);
+  background-color: var(--primary-bg-hover);
 }
 
 .copy-btn:disabled {
@@ -96,8 +116,8 @@ a:hover {
 .export-block {
   background: var(--code-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 16px 20px;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg) 20px;
 }
 
 .urlist {
@@ -110,7 +130,7 @@ a:hover {
 }
 
 .urlist li {
-  padding: 4px 0;
+  padding: var(--spacing-sm) 0;
 }
 
 .urlist li:last-child {
