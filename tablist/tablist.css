@@ -83,7 +83,7 @@ a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  font-family: monospace;
   font-size: 13px;
   line-break: anywhere;
 }

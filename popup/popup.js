@@ -308,7 +308,8 @@ const tabListEvents = () => {
     selectedTabIds = getSelectedTabIds();
     if (selectedTabIds.length === 0) return;
 
-    tabCountSpan.textContent = selectedTabIds.length;
+    const n = selectedTabIds.length;
+    tabCountSpan.textContent = `Close ${n} ${n === 1 ? 'tab' : 'tabs'}?`;
     showConfirmation();
   });
 
